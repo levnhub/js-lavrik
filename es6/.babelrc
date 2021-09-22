@@ -1,0 +1,10 @@
+{
+	"presets": [
+		"@babel/preset-env"
+	]
+	// Plugins if needed
+	// "plugins": [
+		// "@babel/plugin-proposal-class-properties"
+		// "@babel/node"
+	// ]
+}

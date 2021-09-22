@@ -1,0 +1,26 @@
+.pictures img {
+  width: 200px;
+}
+
+.gallery {
+  width: 200px;
+}
+
+.gallery .photos {
+  width: 200px;
+  height: 150px;
+  position: relative;
+}
+
+.gallery img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  opacity: 0;
+  transition: opacity 0.5s linear;
+}
+
+.gallery img.showed {
+  opacity: 1;
+}

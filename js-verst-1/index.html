@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+
+    <style>
+      .items {
+        display: flex;
+      }
+      .item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 200px;
+        background: #eee;
+        margin-right: 15px;
+        box-sizing: border-box;
+      }
+      .item-active {
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="actions">
+      <input type="button" name="save" value="Save" />
+      <input type="button" name="delete" value="Delete" />
+    </div>
+    <br />
+    <div class="items">
+      <div class="item" data-price="2500">1</div>
+      <div class="item" data-price="2000">2</div>
+      <div class="item" data-price="1500">3</div>
+      <div class="item" data-price="5000">4</div>
+    </div>
+    <br />
+    <div class="value">0</div>
+    <br />
+    <div class="calc">
+      <input type="text" name="num1" />
+      <input type="button" name="calc" value="+" data-op="+" />
+      <input type="button" name="calc" value="-" data-op="-" />
+      <input type="button" name="calc" value="/" data-op="/" />
+      <input type="button" name="calc" value="*" data-op="*" />
+      <input type="text" name="num2" />
+      <span>=</span>
+      <span class="res"></span>
+    </div>
+    <h2>Prevent default actions</h2>
+    <nav>
+      <a href="https://yandex.ru" target="_blank">Яндекс</a>
+      <a href="https://google.com" target="_blank">Google</a>
+      <a href="https://mail.ru" target="_blank">Мэил</a>
+    </nav>
+    <div class="pictures">
+      <img src="./img/pic1.jpg" alt="alt" />
+      <img src="./img/pic2.jpg" alt="alt" />
+    </div>
+    <h2>OOP Slider</h2>
+    <div class="gallery gallery-1">
+      <div class="photos">
+        <img src="./img/pic1.jpg" class="showed" alt="alt" />
+        <img src="./img/pic2.jpg" alt="alt" />
+      </div>
+      <div class="control">
+        <button type="button" class="prev">Назад</button>
+        <button type="button" class="next">Вперёд</button>
+      </div>
+    </div>
+    <div class="gallery gallery-2">
+      <div class="photos">
+        <img src="./img/pic1.jpg" class="showed" alt="alt" />
+        <img src="./img/pic2.jpg" alt="alt" />
+      </div>
+      <div class="control">
+        <button type="button" class="prev">Назад</button>
+        <button type="button" class="next">Вперёд</button>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
