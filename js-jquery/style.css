@@ -1,0 +1,21 @@
+.form {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form--input {
+  margin-bottom: 10px;
+}
+
+.form--input.focus {
+  background: rgb(77, 77, 255);
+}
+
+.form--input.focus::placeholder {
+  color: #fff;
+}
+
+.list--item {
+  cursor: pointer;
+}
