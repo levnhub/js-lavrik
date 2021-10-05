@@ -19,3 +19,24 @@
 .list--item {
   cursor: pointer;
 }
+
+.anim_block {
+  width: 100px;
+  height: 100px;
+  background: red;
+}
+
+.menu {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: #000;
+}
+
+.menu a {
+  color: #fff;
+}
+
+.menu a.active {
+  color: yellow;
+}
