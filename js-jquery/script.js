@@ -78,4 +78,7 @@ $(function () {
     e.stopPropagation();
     console.log('1');
   });
+
+  // Call plugin
+  $('.plugin_block').duplicate({ d: ' - ' }).css('color', 'red');
 });
