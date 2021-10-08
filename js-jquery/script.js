@@ -81,4 +81,13 @@ $(function () {
 
   // Call plugin
   $('.plugin_block').duplicate({ d: ' - ' }).css('color', 'red');
+
+  // Custom events
+  $('.custom_event_item').on('some', function () {
+    console.log('Custom event fired!');
+  });
+
+  setTimeout(() => {
+    $('.custom_event_item').trigger('some'); // trigger any event
+  }, 100);
 });
