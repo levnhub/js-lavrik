@@ -1,4 +1,4 @@
-let cnt = 3;
+let cnt = 3; // private local variable
 
 function inc() {
   cnt++;

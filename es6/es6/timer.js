@@ -2,18 +2,18 @@ class Timer {
   constructor(el, time) {
     this.el = el;
     this.time = time;
-    this.interval;
+    this._interval; // _ "private" field, but not x)
 
     this.render();
     this.start();
   }
 
   start() {
-    this.interval = window.setInterval(this.tick, 1000);
+    this._interval = window.setInterval(this.tick, 1000);
   }
 
   stop() {
-    window.clearInterval(this.interval);
+    window.clearInterval(this._interval);
   }
 
   tick = () => {

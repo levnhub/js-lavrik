@@ -1,6 +1,7 @@
 export function* gen(from, to) {
+  // '*' for generator function
   for (let i = from; i <= to; i++) {
-    console.log("yield");
+    console.log('yield'); // generator works parallel with iterator
     yield i;
   }
 }
