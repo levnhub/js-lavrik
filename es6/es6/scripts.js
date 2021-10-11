@@ -4,12 +4,12 @@
 // import "core-js/stable";
 // import "regenerator-runtime/runtime";
 
-import Timer from "./timer.js";
+import Timer from './timer.js';
 // import * as counter2 from "./other.js";
-import { gen, getDischarges } from "./gen.js";
+import { gen, getDischarges } from './gen.js';
 
-window.addEventListener("load", function () {
-  let timer1 = new Timer(document.querySelector(".timer1"), 10);
+window.addEventListener('load', function () {
+  let timer1 = new Timer(document.querySelector('.timer1'), 10);
   // console.log(counter2);
   // console.log(counter2.get());
 
@@ -22,11 +22,13 @@ window.addEventListener("load", function () {
   //   console.log(num);
   // }
 
+  alert('123');
+
   let forPassport = Symbol();
 
   let user = {
-    firstName: "Name",
-    lastName: "Last",
+    firstName: 'Name',
+    lastName: 'Last',
     [forPassport]: 123123213213213,
   };
 

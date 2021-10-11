@@ -1,12 +1,12 @@
 {
-	"extends": "eslint:recommended",
-	"parser": "@babel/eslint-parser",
-	"globals": {
-		"window": true,
-		"document": true,
-		"console": true
-	},
-	"rules": {
-		"no-console": "off"
-	}
+	"extends": "eslint:recommended", // Recommendated format options
+	"parser": "@babel/eslint-parser" // Change parser
+	// "globals": { // Allow global vars
+	// 	"window": true,
+	// 	"document": true,
+	// 	"console": true
+	// },
+	// "rules": {
+	// 	"no-console": "off" // Allow console logs
+	// }
 }
