@@ -38,3 +38,45 @@ function* getWords(str) {
 for (let word of getWords(str)) {
   console.log(word);
 }
+
+// Call & apply methods (Custom context add)
+
+let cap = {
+  i: 2,
+};
+
+// arrow func doesn't work
+// const capDouble = (n, m) => {
+//   return this.i * this.i * n * m;
+// }
+
+function capDouble(n, m) {
+  return this.i * this.i * n * m;
+}
+
+console.log(capDouble.call(cap, 3, 2)); // give context to function (params)
+console.log(capDouble.apply(cap, [3, 2])); // give context to function (array)
+
+let capDouble2 = capDouble.bind(cap); // give context with double
+console.log(capDouble2(3, 4));
+
+// Carring (block params to constants)
+
+let capDouble3 = capDouble.bind(cap, 2, 3);
+
+for (var index = 0; index < 5; index++) {
+  window.setTimeout(
+    function (index) {
+      console.log(index);
+    }.bind(null, index),
+    index * 200
+  );
+}
+
+// Same things, but for this "call" and "apply" will not work
+// const capDoubleArr = (n, m) => {
+//   //
+// }
+// const capDoubleNotArr = function (n, m) {
+//   //
+// }.bind(this);

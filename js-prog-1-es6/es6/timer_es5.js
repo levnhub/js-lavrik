@@ -9,20 +9,20 @@ class Timer {
   }
 
   start() {
-    this._interval = window.setInterval(this.tick, 1000);
+    this._interval = window.setInterval(this.tick.bind(this), 1000); // heal context with "bind"
   }
 
   stop() {
     window.clearInterval(this._interval);
   }
 
-  tick = () => {
+  tick() {
     this.time--;
     this.render();
     if (this.time <= 0) {
       this.stop();
     }
-  };
+  }
 
   render() {
     this.el.innerHTML = this.time;

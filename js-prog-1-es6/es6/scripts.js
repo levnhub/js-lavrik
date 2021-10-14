@@ -1,5 +1,5 @@
 // bad (to heavy)
-// import "babel-polyfill";
+// import 'babel-polyfill';
 // true
 // import "core-js/stable";
 // import "regenerator-runtime/runtime";
@@ -10,13 +10,15 @@
 // "require" must have "module.exports" in src
 // can mutate
 
-import Timer from './timer.js';
+import TimerES5 from './timer_es5.js';
+import TimerES6 from './timer_es6.js';
 // import * as counter2 from "./other.js";
 import { gen, getDischarges } from './gen.js'; // Generator of Iterator!
 
 window.addEventListener('load', function () {
   // OOP Timer
-  let timer1 = new Timer(document.querySelector('.timer1'), 10);
+  new TimerES5(document.querySelector('.timer1'), 10);
+  new TimerES6(document.querySelector('.timer2'), 10);
   // console.log(counter2);
   // console.log(counter2.get());
 
@@ -29,7 +31,7 @@ window.addEventListener('load', function () {
   //   console.log(num);
   // }
 
-  let forPassport = Symbol();
+  let forPassport = window.Symbol();
 
   let user = {
     firstName: 'Name',
@@ -53,7 +55,7 @@ window.addEventListener('load', function () {
   // How generator is working
   let someObj = {
     to: 10,
-    [Symbol.iterator]: function () {
+    [window.Symbol.iterator]: function () {
       // against example "next" property that can breaks all world code =//
       let current = 0;
       let stop = this.to;
