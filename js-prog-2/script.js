@@ -80,3 +80,32 @@ for (var index = 0; index < 5; index++) {
 // const capDoubleNotArr = function (n, m) {
 //   //
 // }.bind(this);
+
+// Getters & Setters
+
+import someGetter from './getters.js';
+
+console.log(someGetter.cntNew);
+someGetter.cntNew = 5;
+console.log(someGetter.cntNew);
+someGetter.cntNew = -5;
+console.log(someGetter.cntNew);
+someGetter.cntNew = 100;
+console.log(someGetter.cntNew);
+
+// Vue parody
+
+import VueGetters from './vue-getters.js';
+
+let vg = new VueGetters({
+  el: '.elem1',
+  data: {
+    click: 1,
+    name: 'Some name!',
+  },
+  template: `<div><h2>{{ click }}</h2>{{ name }}</div>`,
+});
+
+document.querySelector('.elem1').addEventListener('click', function () {
+  vg.data.click++; // Reactive code without DOM modification, only data routes!
+});
