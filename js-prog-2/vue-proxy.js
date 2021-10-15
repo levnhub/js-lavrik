@@ -5,10 +5,8 @@ export default class VueGetters {
     this.$data = settings.data;
     this.data = {};
 
-    // Object.defineProperty variant
     for (let name in this.$data) {
       Object.defineProperty(this.data, name, {
-        // Like watcher for value changes
         get: () => {
           // arr for right context
           return this.$data[name];
@@ -19,18 +17,6 @@ export default class VueGetters {
         },
       });
     }
-
-    // Proxy variant
-    // this.data = new Proxy(this.$data, {
-    //   get: (target, name) => {
-    //     return target[name];
-    //   },
-    //   set: (target, name, value) => {
-    //     target[name] = value;
-    //     this.render();
-    //     return true;
-    //   },
-    // });
 
     this.render();
   }

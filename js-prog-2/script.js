@@ -93,7 +93,17 @@ console.log(someGetter.cntNew);
 someGetter.cntNew = 100;
 console.log(someGetter.cntNew);
 
-// Vue parody
+// Proxy getter & setters
+
+import data from './proxy.js';
+console.log('Proxy', data.a);
+console.log('Proxy', data.b);
+data.a = 5;
+data.b = 7;
+console.log('Proxy', data.a);
+console.log('Proxy', data.b);
+
+// Vue getters
 
 import VueGetters from './vue-getters.js';
 
@@ -108,4 +118,21 @@ let vg = new VueGetters({
 
 document.querySelector('.elem1').addEventListener('click', function () {
   vg.data.click++; // Reactive code without DOM modification, only data routes!
+});
+
+// Vue proxy
+
+import VueProxy from './vue-proxy.js';
+
+let vp = new VueProxy({
+  el: '.elem2',
+  data: {
+    click: 1,
+    name: 'Some name!',
+  },
+  template: `<div><h2>{{ click }}</h2>{{ name }}</div>`,
+});
+
+document.querySelector('.elem2').addEventListener('click', function () {
+  vp.data.click++;
 });
