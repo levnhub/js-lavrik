@@ -1,4 +1,4 @@
-import Parody from '../parody.js';
+import Parody from '../parody/index.js';
 
 export default class InputNumber extends Parody {
   constructor(props) {
@@ -9,8 +9,8 @@ export default class InputNumber extends Parody {
     let num = document.createElement('input');
     num.className = 'inputNumber__value';
     num.setAttribute('type', 'text');
-    nav.value = this.props.value;
-    nav.addEventListener('change', (e) => {
+    num.value = this.props.value;
+    num.addEventListener('change', (e) => {
       console.log(e.target.value);
     });
 

@@ -9,8 +9,3 @@ export default class Parody {
     return div;
   }
 }
-
-// import Cart from './components/cart.js';
-
-// let cart = new Cart();
-// document.querySelector('.sample').appendChild(cart.render());

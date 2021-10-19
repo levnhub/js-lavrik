@@ -1,4 +1,4 @@
-import Parody from '../parody.js';
+import Parody from '../parody/index.js';
 import InputNumber from './input-number.js';
 
 export default class Cart extends Parody {
