@@ -1,4 +1,4 @@
-import Parody from '../parody/index.js';
+import { Parody, ParodyDom } from '../parody/parody.js';
 import InputNumber from './input-number.js';
 
 export default class Cart extends Parody {
@@ -21,19 +21,57 @@ export default class Cart extends Parody {
     };
   }
 
+  onChange(ind, val) {
+    this.state.products[ind].current = val;
+    this.render();
+  }
+
   render() {
-    let div = document.createElement('div');
+    const sum = this.state.products.reduce((sum, item) => {
+      return sum + item.price * item.current;
+    }, 0);
 
-    this.state.products.forEach((item) => {
-      let input = new InputNumber({
-        min: 1,
-        max: item.rest,
-        value: item.current,
-      }).render();
+    const prod = this.state.products;
 
-      div.appendChild(input);
-    });
+    return super.render(
+      <div>
+        <InputNumber
+          min="1"
+          max={prod[0].rest}
+          value={prod[0].current}
+          change={this.onChange.bind(this, 0)}
+        />
+        <InputNumber
+          min="1"
+          max={prod[1].rest}
+          value={prod[1].current}
+          change={this.onChange.bind(this, 1)}
+        />
+        <hr />
+        <div>{sum}</div>
+      </div>
+    );
+    // Manual render
+    // let div = document.createElement('div');
 
-    return div;
+    // this.state.products.forEach((item, i) => {
+    //   let input = new InputNumber({
+    //     min: 1,
+    //     max: item.rest,
+    //     value: item.current,
+    //     change: this.onChange.bind(this, i), // took context to parent handle function
+    //   }).render();
+
+    //   div.appendChild(input);
+    // });
+
+    // let summary = document.createElement('div');
+    // summary.innerHTML = this.state.products.reduce((sum, item) => {
+    //   sum = item.price * item.current;
+    //   return sum;
+    // }, 0);
+    // div.appendChild(summary);
+
+    // return super.render(div);
   }
 }
