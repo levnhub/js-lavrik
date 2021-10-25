@@ -48,7 +48,7 @@ let cap = {
 // arrow func doesn't work
 // const capDouble = (n, m) => {
 //   return this.i * this.i * n * m;
-// }
+// };
 
 function capDouble(n, m) {
   return this.i * this.i * n * m;
@@ -58,7 +58,7 @@ console.log(capDouble.call(cap, 3, 2)); // give context to function (params)
 console.log(capDouble.apply(cap, [3, 2])); // give context to function (array)
 
 let capDouble2 = capDouble.bind(cap); // give context with double
-console.log(capDouble2(3, 4));
+console.log('capDouble2', capDouble2(3, 4));
 
 // Carring (block params to constants)
 
@@ -72,6 +72,8 @@ for (var index = 0; index < 5; index++) {
     index * 200
   );
 }
+
+console.log('capDouble3', capDouble3());
 
 // Same things, but for this "call" and "apply" will not work
 // const capDoubleArr = (n, m) => {
