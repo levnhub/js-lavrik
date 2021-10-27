@@ -30,8 +30,12 @@ carring, setters, getters, proxy
 
 ## js-prog-3
 
-promise, async
+try/catch/finally, promise, async
 
 ## js-prog-4
 
 React parody
+
+## js-prog-5
+
+Proxy webpack config, REST API example
