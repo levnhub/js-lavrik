@@ -10,6 +10,8 @@ function makeRequest(url, options = {}) {
   });
 }
 
+const url = '/js-frontend-api/test.php';
+
 async function all() {
   // fetch with json() method return Promise too, it is no good practice
   // need write handle func above
@@ -18,18 +20,52 @@ async function all() {
   //   console.log(data);
   // });
 
-  const data = await makeRequest('/js-frontend-api/test.php');
+  const data = await makeRequest(url);
   return data;
 }
 
 async function one(id) {
-  const data = await makeRequest(`/js-frontend-api/test.php?id=${id}`);
+  const data = await makeRequest(`${url}?id=${id}`);
   return data;
 }
 
-async function remove(id) {}
+async function remove(id) {
+  const data = await makeRequest(`${url}?id=${id}`, {
+    method: 'DELETE',
+  });
+  return data;
+}
 
-export { all, one, remove };
+async function add(article) {
+  const formData = new FormData();
+  // parse HTML from ca use, or
+  // let myForm = document.getElementById('myForm');
+  // let formData = new FormData(myForm);
+
+  for (const name in article) {
+    formData.append(name, article[name]);
+  }
+
+  const data = await makeRequest(url, {
+    method: 'POST',
+    body: formData,
+  });
+  return data;
+}
+
+async function edit(id, article) {
+  const newArticle = {
+    ...article,
+    id,
+  };
+  const data = await makeRequest(url, {
+    method: 'PUT',
+    body: JSON.stringify(newArticle), // data to string
+  });
+  return data;
+}
+
+export { all, one, remove, add, edit };
 
 // get — получение
 // post — запись

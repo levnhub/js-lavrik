@@ -38,4 +38,7 @@ React parody
 
 ## js-prog-5
 
-Proxy webpack config, REST API example
+No Api x((
+Proxy webpack config, REST API example, Custom request methods with custom responses
+
+## js-prog-6
