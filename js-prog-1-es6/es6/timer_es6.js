@@ -31,3 +31,6 @@ class Timer {
 }
 
 export default Timer;
+
+
+// styled components

@@ -42,3 +42,6 @@ No Api x((
 Proxy webpack config, REST API example, Custom request methods with custom responses
 
 ## js-prog-6
+
+No Api x((
+Axios requests

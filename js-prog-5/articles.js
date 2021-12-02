@@ -1,4 +1,8 @@
 function makeRequest(url, options = {}) {
+  // add headers if needed
+  // if ('headers' in options) options.headers = {};
+  // options.headers.Authorization = '';
+
   return fetch(url, options).then((response) => {
     if (response.status !== 200) {
       return response.text().then((text) => {
@@ -83,3 +87,5 @@ export { all, one, remove, add, edit };
 
 // PUT articles.php -> true || false, если статья не найдена
 // 	body-json(id, title, content)
+
+// You can write your own Class against Axios, because Fetch is modernest than xhr
