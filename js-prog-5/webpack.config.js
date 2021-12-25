@@ -9,7 +9,9 @@ let conf = {
     publicPath: 'js/',
   },
   devServer: {
-    overlay: true,
+    client: {
+      overlay: true,
+    },
     proxy: {
       '/js-frontend-api/**': {
         target: 'http://lavrik.localhost/',
